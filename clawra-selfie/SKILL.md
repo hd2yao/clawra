@@ -1,6 +1,6 @@
 ---
 name: clawra-selfie
-description: Generate and send Clawra selfie images through OpenClaw using a configurable provider (OpenAI or Fal)
+description: Generate and send Clawra selfie images through OpenClaw using a configurable provider (OpenAI, Runware, or Fal)
 allowed-tools: Bash(npx:*) Bash(openclaw:*) Bash(bash:*) Read
 ---
 
@@ -36,10 +36,12 @@ npx ts-node scripts/clawra-selfie.ts "<prompt>" <platform> <target> [caption]
 ## Provider Behavior
 
 - `CLAWRA_IMAGE_PROVIDER=openai` (default)
+- `CLAWRA_IMAGE_PROVIDER=runware` (fallback/manual switch)
 - `CLAWRA_IMAGE_PROVIDER=fal` (fallback/manual switch)
 - Model controlled by `CLAWRA_IMAGE_MODEL` (default `gpt-image-1`)
 - Keys:
   - `OPENAI_API_KEY` for OpenAI
+  - `RUNWARE_API_KEY` for Runware
   - `FAL_KEY` for Fal
 
 ## Telegram Notes
@@ -50,6 +52,7 @@ npx ts-node scripts/clawra-selfie.ts "<prompt>" <platform> <target> [caption]
 ## Troubleshooting
 
 - `openai provider not configured`: missing `OPENAI_API_KEY`
+- `runware provider not configured`: missing `RUNWARE_API_KEY`
 - `billing_hard_limit_reached`: OpenAI billing limit issue (not code issue)
 - `fal provider not configured`: missing `FAL_KEY`
 

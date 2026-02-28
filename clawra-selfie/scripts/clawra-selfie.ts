@@ -69,9 +69,10 @@ Args:
   caption  - Message caption (default: "Generated with CLAWRA")
 
 Env:
-  CLAWRA_IMAGE_PROVIDER - "openai" or "fal" (default: "openai")
+  CLAWRA_IMAGE_PROVIDER - "openai", "runware", or "fal" (default: "openai")
   CLAWRA_IMAGE_MODEL   - Model name (default: "gpt-image-1")
   OPENAI_API_KEY       - Required for openai provider
+  RUNWARE_API_KEY      - Required for runware provider
   FAL_KEY              - Required for fal provider
 
 Target format examples:
